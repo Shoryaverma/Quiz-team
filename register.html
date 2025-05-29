@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Quiz-App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            background-color: #D0D1EB;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .register-form {
+            background: #D0D1EB;
+            padding: 2rem;
+        }
+        .form-control {
+            height: 50px;
+            border-radius: 12px;
+            background: #F7F7F7;
+            border: none;
+        }
+        .btn-register {
+            height: 50px;
+            border-radius: 12px;
+            background: #282626;
+            color: white;
+            font-weight: 700;
+        }
+        .btn-google {
+            height: 50px;
+            border-radius: 12px;
+            background: #F7F7F7;
+            color: #282626;
+            font-weight: 700;
+        }
+        .illustration-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .illustration-img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            max-height: 80vh;
+        }
+        .form-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        @media (max-width: 991px) {
+            .illustration-section {
+                display: none;
+            }
+            .form-section {
+                min-height: auto;
+                padding: 2rem 0;
+            }
+            .register-form {
+                margin: 0 1rem;
+            }
+        }
+        @media (min-width: 992px) {
+            .register-form {
+                max-width: 450px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <!-- Left side illustration -->
+            <div class="col-lg-6 illustration-section">
+                <img src="registerimage.webp" alt="Register Illustration" class="illustration-img">
+            </div>
+
+            <!-- Right side form -->
+            <div class="col-lg-6 form-section">
+                <div class="register-form w-100">
+                    <h1 class="text-center mb-4" style="color: #060606; font-size: 2rem; font-family: Inter; font-weight: 400;">
+                        Create your account
+                    </h1>
+                    
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label" style="color: #141212; font-family: Inter;">Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your name">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label" style="color: #141212; font-family: Inter;">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="password" class="form-label" style="color: #141212; font-family: Inter;">Password</label>
+                            <input type="password" id="password" class="form-control" placeholder="Enter your password">
+                        </div>
+
+                        <button type="submit" class="btn btn-register w-100 mb-3">
+                            Create account
+                        </button>
+
+                        <button type="button" class="btn btn-google w-100 mb-4">
+                            <i class="fab fa-google me-2"></i>Sign up with Google
+                        </button>
+
+                        <div class="text-center">
+                            <span style="color: #282626; font-family: Inter;">Already have an account?</span>
+                            <a href="main.html" class="ms-2" style="color: #EB6C16; font-family: Inter; text-decoration: none;">Sign in</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
