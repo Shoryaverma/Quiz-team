@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Category</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+            font-family: 'Inter', sans-serif;
+            background-color: #D1D3F4;
+            overflow-x: hidden;
+        }
+
+        main {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            color: #848484;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 2rem 0;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 1400px;
+            padding: 1rem;
+        }
+
+        .category-card {
+            background: #E6E7EF;
+            border-radius: 24px;
+            border: 1px #D1D3F4 solid;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-name {
+            color: #848484;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .category-image {
+            width: 150px;
+            height: 150px;
+            margin: 1.5rem 0;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .difficulty-options {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .difficulty-option {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .difficulty-option:hover {
+            background-color: rgba(209, 211, 244, 0.3);
+        }
+
+        .difficulty-checkbox {
+            width: 24px;
+            height: 24px;
+            background: #D1D3F4;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .difficulty-option:hover .difficulty-checkbox {
+            background-color: #848484;
+        }
+
+        .difficulty-text {
+            color: #848484;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 1024px) {
+            .categories-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+                margin: 1.5rem 0;
+            }
+
+            .categories-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .category-card {
+                padding: 1.5rem;
+            }
+
+            .category-name {
+                font-size: 1.3rem;
+            }
+
+            .category-image {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            main {
+                padding: 0.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+                margin: 1rem 0;
+            }
+
+            .category-card {
+                padding: 1rem;
+            }
+
+            .category-name {
+                font-size: 1.2rem;
+            }
+
+            .difficulty-text {
+                font-size: 1rem;
+            }
+
+            .category-image {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Select your Category</h1>
+        
+        <section class="categories-grid">
+            <!-- Quantitative Aptitude Card -->
+            <article class="category-card">
+                <h2 class="category-name">Quantitative Aptitude</h2>
+                <img class="category-image" src="category1.png" alt="Quantitative Aptitude" />
+                <div class="difficulty-options">
+                    <label class="difficulty-option">
+                        <div class="difficulty-checkbox"></div>
+                        <span class="difficulty-text">Easy</span>
+                    </label>
+                    <label class="difficulty-option">
+                        <div class="difficulty-checkbox"></div>
+                        <span class="difficulty-text">Medium</span>
+                    </label>
+                    <label class="difficulty-option">
+                        <div class="difficulty-checkbox"></div>
+                        <span class="difficulty-text">Hard</span>
+                    </label>
+                </div>
+            </article>
+
+            <!-- Logical Reasoning Card -->
+            <article class="category-card">
+                <h2 class="category-name">Logical Reasoning</h2>
+                <img class="category-image" src="category2.png" alt="Logical Reasoning" />
+                <div class="difficulty-options">
+                    <label class="difficulty-option">
+                        <div class="difficulty-checkbox"></div>
+                        <span class="difficulty-text">Easy</span>
+                    </label>
+                    <label class="difficulty-option">
+                        <div class="difficulty-checkbox"></div>
+                        <span class="difficulty-text">Medium</span>
+                    </label>
+                    <label class="difficulty-option">
+                        <div class="difficulty-checkbox"></div>
+                        <span class="difficulty-text">Hard</span>
+                    </label>
+                </div>
+            </article>
+
+            <!-- Coding Aptitude Card -->
+            <article class="category-card">
+                <h2 class="category-name">Coding Aptitude</h2>
+                <img class="category-image" src="category3.webp" alt="Coding Aptitude" />
+                <div class="difficulty-options">
+                    <label class="difficulty-option">
+                        <div class="difficulty-checkbox"></div>
+                        <span class="difficulty-text">Easy</span>
+                    </label>
+                    <label class="difficulty-option">
+                        <div class="difficulty-checkbox"></div>
+                        <span class="difficulty-text">Medium</span>
+                    </label>
+                    <label class="difficulty-option">
+                        <div class="difficulty-checkbox"></div>
+                        <span class="difficulty-text">Hard</span>
+                    </label>
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
