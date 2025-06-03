@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Quiz-App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            background-color: #D0D1EB;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .main-form {
+            background: #F7F7F7;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+        .form-control {
+            height: 50px;
+            border-radius: 12px;
+            background: #F7F7F7;
+            border: none;
+        }
+        .btn-start {
+            height: 50px;
+            border-radius: 12px;
+            background: #282626;
+            color: white;
+            font-weight: 700;
+        }
+        .illustration-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .illustration-img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            max-height: 80vh;
+        }
+        .form-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .instructions-section {
+            margin-top: 2rem;
+        }
+        .instruction-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        .instruction-dot {
+            width: 14px;
+            height: 14px;
+            background: #D0D1EB;
+            border-radius: 50%;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        .instruction-text {
+            color: #353535;
+            font-size: 0.9rem;
+            font-family: Inter;
+            line-height: 1.4;
+        }
+        @media (max-width: 991px) {
+            .illustration-section {
+                display: none;
+            }
+            .form-section {
+                min-height: auto;
+                padding: 2rem 0;
+            }
+            .main-form {
+                margin: 0 1rem;
+            }
+        }
+        @media (min-width: 992px) {
+            .main-form {
+                max-width: 450px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <!-- Left side illustration -->
+            <div class="col-lg-6 illustration-section">
+                <img src="home.png" alt="Quiz Illustration" class="illustration-img">
+            </div>
+
+            <!-- Right side form -->
+            <div class="col-lg-6 form-section">
+                <div class="main-form w-100">
+                    <h1 class="text-center mb-5" style="color: #060606; font-size: 2rem; font-family: Inter; font-weight: 400;">
+                        Test your Knowledge
+                    </h1>
+                    
+                    <div class="instructions-section">
+                        <div class="instruction-item">
+                            <div class="instruction-dot"></div>
+                            <div class="instruction-text">
+                                There will be a Total of <strong>10 Questions</strong> related to the <br>
+                                <strong>Option you Choose</strong>. Default choice is JavaScript.
+                            </div>
+                        </div>
+
+                        <div class="instruction-item">
+                            <div class="instruction-dot"></div>
+                            <div class="instruction-text">
+                                Your Total Points will be displayed at the end of the Quiz only.
+                            </div>
+                        </div>
+
+                        <div class="instruction-item">
+                            <div class="instruction-dot"></div>
+                            <div class="instruction-text">
+                                Once attempted question will not be available for a Reattempt.
+                            </div>
+                        </div>
+
+                        <div class="instruction-item">
+                            <div class="instruction-dot"></div>
+                            <div class="instruction-text">
+                                <strong>Points will not be deducted</strong> for Wrong answer.
+                            </div>
+                        </div>
+
+                        <div class="instruction-item">
+                            <div class="instruction-dot"></div>
+                            <div class="instruction-text">
+                                All the Questions will be having <strong>Multiple Choice</strong>.
+                            </div>
+                        </div>
+
+                        <div class="instruction-item">
+                            <div class="instruction-dot"></div>
+                            <div class="instruction-text">
+                                Once the page is refreshed all your <strong>Progress will be lost</strong>.
+                            </div>
+                        </div>
+
+                        <div class="instruction-item">
+                            <div class="instruction-dot"></div>
+                            <div class="instruction-text">
+                                There is <strong>Time Limit</strong> of 15 seconds so be quick.
+                            </div>
+                        </div>
+
+                        <div class="instruction-item">
+                            <div class="instruction-dot"></div>
+                            <div class="instruction-text">
+                                <strong>Un-Attempted Question</strong> will be awarded <strong>0 points</strong>.
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-start w-100 mb-4">
+                        Let's Start
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
