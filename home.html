@@ -5,169 +5,257 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Quiz-App</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         body {
             background-color: #D0D1EB;
             min-height: 100vh;
             overflow-x: hidden;
         }
-        .main-form {
-            background: #F7F7F7;
+        .main-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin: 2rem auto;
+            max-width: 1200px;
+            height: 85vh;
+        }
+        .row {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: stretch;
+        }
+        .left-section {
             padding: 2rem;
-            border-radius: 12px;
-        }
-        .form-control {
-            height: 50px;
-            border-radius: 12px;
-            background: #F7F7F7;
-            border: none;
-        }
-        .btn-start {
-            height: 50px;
-            border-radius: 12px;
-            background: #282626;
-            color: white;
-            font-weight: 700;
-        }
-        .illustration-section {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            overflow: hidden;
+            gap: 1.5rem;
+            height: 100%;
+            flex: 1;
         }
-        .illustration-img {
-            max-width: 100%;
-            height: auto;
-            object-fit: contain;
-            max-height: 80vh;
-        }
-        .form-section {
+        .right-section {
+            padding: 2rem;
+            height: 100%;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+            flex-direction: column;
+            background: white;
+            flex: 1;
+            border-radius: 12px;
+        }
+        .main-form {
+            background: white;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            
         }
         .instructions-section {
-            margin-top: 2rem;
+            width: 100%;
+            height: 100%;
+            /* overflow-y: auto; */
+            padding: 1rem;
+            
+        }
+        .IH  {
+            color: #060606;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-family: Inter;
+            /* align-items: center; */
+            /* margin-left: 1rem; */
+            display: flex;
+            justify-content: center;
+            
         }
         .instruction-item {
             display: flex;
             align-items: flex-start;
             margin-bottom: 1rem;
+            padding: 0.8rem;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+            background-color: #fafafa;
+        }
+        .instruction-item:hover {
+            background-color: #f5f5f5;
         }
         .instruction-dot {
-            width: 14px;
-            height: 14px;
+            width: 10px;
+            height: 10px;
             background: #D0D1EB;
             border-radius: 50%;
-            margin-right: 10px;
+            margin-right: 15px;
+            margin-top: 6px;
             flex-shrink: 0;
         }
         .instruction-text {
             color: #353535;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-family: Inter;
-            line-height: 1.4;
+            line-height: 1.5;
+            flex: 1;
         }
+        .instruction-text strong {
+            color: #282626;
+            font-weight: 600;
+        }
+        .illustration-img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            max-height: 45vh;
+            margin-bottom: 0.5rem;
+        }
+        .welcome-text {
+            color: #060606;
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+            text-align: center;
+            line-height: 1.2;
+            max-width: 400px;
+        }
+        .col-auto {
+            padding: 0;
+            width: 2px;
+            height: 100%;
+            display: flex;
+            align-items: stretch;
+        }
+        .btn-start {
+            height: 36px;
+            border-radius: 8px;
+            background: #282626;
+            color: white;
+            font-weight: 500;
+            font-size: 0.9rem;
+            width: 180px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            padding: 0 1rem;
+            max-width: 45%;
+        }
+        .btn-start:hover {
+            background: white;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+        .divider {
+            width: 2px;
+            background-color: #e0e0e0;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* h2{
+            justify-content: center;
+            display: flex;
+        } */
         @media (max-width: 991px) {
-            .illustration-section {
+            .main-container {
+                margin: 1rem;
+                height: auto;
+            }
+            .row {
+                height: auto;
+            }
+            .left-section {
                 display: none;
             }
-            .form-section {
-                min-height: auto;
-                padding: 2rem 0;
-            }
-            .main-form {
-                margin: 0 1rem;
-            }
-        }
-        @media (min-width: 992px) {
-            .main-form {
-                max-width: 450px;
-                margin: 0 auto;
+            .right-section {
+                flex: 1;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container-fluid p-0">
-        <div class="row g-0">
-            <!-- Left side illustration -->
-            <div class="col-lg-6 illustration-section">
-                <img src="home.png" alt="Quiz Illustration" class="illustration-img">
-            </div>
+    <div class="container-fluid py-4">
+        <div class="main-container">
+            <div class="row">
+                <!-- Left side with image and button -->
+                <div class="left-section">
+                    <img src="home.png" alt="Quiz Illustration" class="illustration-img">
+                    <h1 class="welcome-text">Test your Knowledge</h1>
+                    <button class="btn btn-start w-100">
+                        Let's Start
+                    </button>
+                </div>
 
-            <!-- Right side form -->
-            <div class="col-lg-6 form-section">
-                <div class="main-form w-100">
-                    <h1 class="text-center mb-5" style="color: #060606; font-size: 2rem; font-family: Inter; font-weight: 400;">
-                        Test your Knowledge
-                    </h1>
-                    
-                    <div class="instructions-section">
-                        <div class="instruction-item">
-                            <div class="instruction-dot"></div>
-                            <div class="instruction-text">
-                                There will be a Total of <strong>10 Questions</strong> related to the <br>
-                                <strong>Option you Choose</strong>. Default choice is JavaScript.
-                            </div>
+                <!-- Divider -->
+                <div class="col-auto">
+                    <div class="divider"></div>
+                </div>
+
+                <!-- Right side form -->
+                <div class="right-section">
+                    <div class="main-form">
+                        <div class ="IH">
+                        <h2 class ="welcome-text">INSTRUCTION</h2>
                         </div>
-
-                        <div class="instruction-item">
-                            <div class="instruction-dot"></div>
-                            <div class="instruction-text">
-                                Your Total Points will be displayed at the end of the Quiz only.
+                        <div class="instructions-section">
+                            <div class="instruction-item">
+                                <div class="instruction-dot"></div>
+                                <div class="instruction-text">
+                                    There will be a Total of <strong>10 Questions</strong> related to the 
+                                    <strong>Option you Choose</strong>. <br>Default choice is JavaScript.
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="instruction-item">
-                            <div class="instruction-dot"></div>
-                            <div class="instruction-text">
-                                Once attempted question will not be available for a Reattempt.
+                            <div class="instruction-item">
+                                <div class="instruction-dot"></div>
+                                <div class="instruction-text">
+                                    Your Total Points will be displayed at the end of the Quiz only.
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="instruction-item">
-                            <div class="instruction-dot"></div>
-                            <div class="instruction-text">
-                                <strong>Points will not be deducted</strong> for Wrong answer.
+                            <div class="instruction-item">
+                                <div class="instruction-dot"></div>
+                                <div class="instruction-text">
+                                    Once attempted question will not be available for a Reattempt.
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="instruction-item">
-                            <div class="instruction-dot"></div>
-                            <div class="instruction-text">
-                                All the Questions will be having <strong>Multiple Choice</strong>.
+                            <div class="instruction-item">
+                                <div class="instruction-dot"></div>
+                                <div class="instruction-text">
+                                    <strong>Points will not be deducted</strong> for Wrong answer.
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="instruction-item">
-                            <div class="instruction-dot"></div>
-                            <div class="instruction-text">
-                                Once the page is refreshed all your <strong>Progress will be lost</strong>.
+                            <div class="instruction-item">
+                                <div class="instruction-dot"></div>
+                                <div class="instruction-text">
+                                    All the Questions will be having <strong>Multiple Choice</strong>.
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="instruction-item">
-                            <div class="instruction-dot"></div>
-                            <div class="instruction-text">
-                                There is <strong>Time Limit</strong> of 15 seconds so be quick.
+                            <div class="instruction-item">
+                                <div class="instruction-dot"></div>
+                                <div class="instruction-text">
+                                    Once the page is refreshed all your <strong>Progress will be lost</strong>.
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="instruction-item">
-                            <div class="instruction-dot"></div>
-                            <div class="instruction-text">
-                                <strong>Un-Attempted Question</strong> will be awarded <strong>0 points</strong>.
+                            <div class="instruction-item">
+                                <div class="instruction-dot"></div>
+                                <div class="instruction-text">
+                                    There is <strong>Time Limit</strong> of 15 seconds so be quick.
+                                </div>
+                            </div>
+
+                            <div class="instruction-item">
+                                <div class="instruction-dot"></div>
+                                <div class="instruction-text">
+                                    <strong>Un-Attempted Question</strong> will be awarded <strong>0 points</strong>.
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <button class="btn btn-start w-100 mb-4">
-                        Let's Start
-                    </button>
                 </div>
             </div>
         </div>
